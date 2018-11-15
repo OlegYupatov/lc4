@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+       <script type="text/javascript">
+    function c(val) {
+    document.getElementById("c").value = val;
+}
+function v(val) {
+    document.getElementById("c").value += val;
+}
+function e() {
+    try {
+        var Formula = document.getElementById("c").value;
+        var Result =eval(Formula);
+        c(Result)
+        document.getElementById("History").innerHTML += Formula +"="+Result + "<br/>";
+    } catch (e) {
+        c('Error')
+    }
+}
+ 
+ </script>
+ <style type="text/css">
+   ul li {
+     display: inline-block;
+     list-style-type: none;
+ }
+ </style>
+
+  </head>
+  <body>
+ 
+   <ul>
+    <li>
+        <input id="c" type="text" size="10" readonly="" />
+    </li>
+    <li>
+        <input type="button" value="C" onclick="c(&quot;&quot;)" class="btn btn-warning" />
+    </li>
+</ul>
+<ul>
+    <li>
+        <input type="button" value="7" onclick="v(&quot;7&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="8" onclick="v(&quot;8&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="9" onclick="v(&quot;9&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="+" onclick="v(&quot;+&quot;)" class="btn btn-success" />
+    </li>
+</ul>
+<ul>
+    <li>
+        <input type="button" value="4" onclick="v(&quot;4&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="5" onclick="v(&quot;5&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="6" onclick="v(&quot;6&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="-" onclick="v(&quot;-&quot;)" class="btn btn-success" />
+    </li>
+</ul>
+<ul>
+    <li>
+        <input type="button" value="1" onclick="v(&quot;1&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="2" onclick="v(&quot;2&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="3" onclick="v(&quot;3&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="*" onclick="v(&quot;*&quot;)" class="btn btn-success" />
+    </li>
+</ul>
+<ul>
+    <li>
+        <input type="button" value="0" onclick="v(&quot;0&quot;)" class="btn btn-info" />
+    </li>
+    <li>
+        <input type="button" value="Решить" onclick="e()" class="btn btn-danger" />
+    </li>
+    <li>
+        <input type="button" value="/" onclick="v(&quot;/&quot;)" class="btn btn-success" />
+    </li>
+</ul>
+<ul>
+    <li id="History"><h3>История:</h3></li>
+</ul>
+
+  </body>
+</html>
